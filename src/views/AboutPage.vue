@@ -6,39 +6,12 @@ import Form from '@/components/UnForm.vue'
 // on importe les fct dont on a besoin
 import { ref, computed } from 'vue'
 
-  // on crée un array team modifiable car ref()
-  const team = ref([
-    {
-      pseudo: "Lukas",
-      fonction: "étudiant",
-      ddn: "2002-01-20",
-      actif: true
-    },
-    {
-      pseudo: "Adrien",
-      fonction: "étudiant",
-      ddn: "2000-02-20",
-      actif: false
-    },
-    {
-      pseudo: "Cindy",
-      fonction: "directrice",
-      ddn: "1990-04-01",
-      actif: true
-    },
-    {
-      pseudo: "Pierre",
-      fonction: "formateur",
-      ddn: "1980-08-14",
-      actif: true
-    },
-    {
-      pseudo: "Greg",
-      fonction: "formateur",
-      ddn: "1975-04-03",
-      actif: false
-    },
-  ])
+import { useTeamStore } from '@/stores/teams'
+
+  // on crée un array teamStore en utilisant useTeamStore() pour accéder au store
+  const teamStore = useTeamStore()
+  // allTeam est une fct mais on l'appelle sans les ()
+  const team = ref(teamStore.allTeam)
 
   const addMember = (payload) => {
     //console.log(newMember.value)
