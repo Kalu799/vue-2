@@ -47,13 +47,16 @@ export const useTeamStore = defineStore('team', {
   },
   // méthodes setters
   actions: {
+    // action pour toggle le status d'actif
     toggleActif(index) {
       // this fait référence au state
       this.team[index].actif = !this.team[index].actif
     },
+    // action pour supp un membre
     deleteMember(index) {
       this.team.splice(index, 1)
     },
+    // action pour ajouter un membre
     addMember(payload) {
       this.team.push(payload)
     },

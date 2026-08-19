@@ -1,12 +1,12 @@
 <script setup>
 
-// import composant Member
-import Member from '@/components/TeamMember.vue'
-import Form from '@/components/UnForm.vue'
-// on importe les fct dont on a besoin
-import { ref, computed } from 'vue'
+  // import composant Member
+  import Member from '@/components/TeamMember.vue'
+  import Form from '@/components/UnForm.vue'
+  // on importe les fct dont on a besoin
+  import { ref, computed } from 'vue'
 
-import { useTeamStore } from '@/stores/teams'
+  import { useTeamStore } from '@/stores/teams'
 
   // on crée un array teamStore en utilisant useTeamStore() pour accéder au store
   const teamStore = useTeamStore()
@@ -33,25 +33,25 @@ import { useTeamStore } from '@/stores/teams'
     teamStore.deleteMember(payload)
   }
 
-// var vide liée a input search
-const filtre = ref('')
-// var de la team qui réagis aux modifs
-const teamFiltred = computed(() => {
-  // const de la recherche mise en minuscule
-  const recherche = filtre.value.toLowerCase()
-  // si la recherche n'est pas assée longue, on renvois l'array de team complet
-  if (recherche.length <= 2) {
-    return team.value
-  }
-  // sinon on filtre -> .filter() sur array
-  return team.value.filter((item) => {
-    return (
-      // on check sur chaque item de l'array 'team' si le pseudo ou la fonction en minuscule incluent la recherche -> .includes() sur string
-      item.pseudo.toLowerCase().includes(recherche) ||
-      item.fonction.toLowerCase().includes(recherche)
-    )
+  // var vide liée a input search
+  const filtre = ref('')
+  // var de la team qui réagis aux modifs
+  const teamFiltred = computed(() => {
+    // const de la recherche mise en minuscule
+    const recherche = filtre.value.toLowerCase()
+    // si la recherche n'est pas assée longue, on renvois l'array de team complet
+    if (recherche.length <= 2) {
+      return team.value
+    }
+    // sinon on filtre -> .filter() sur array
+    return team.value.filter((item) => {
+      return (
+        // on check sur chaque item de l'array 'team' si le pseudo ou la fonction en minuscule incluent la recherche -> .includes() sur string
+        item.pseudo.toLowerCase().includes(recherche) ||
+        item.fonction.toLowerCase().includes(recherche)
+      )
+    })
   })
-})
 
 </script>
 
