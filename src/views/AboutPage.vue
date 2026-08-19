@@ -28,7 +28,8 @@ import { useTeamStore } from '@/stores/teams'
 
   const deleteMember = (payload) => {
     //console.log(payload)
-    team.value.splice(payload, 1)
+    //team.value.splice(payload, 1)
+    teamStore.deleteMember(payload)
   }
 
 // var vide liée a input search

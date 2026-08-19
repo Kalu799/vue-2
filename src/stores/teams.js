@@ -51,5 +51,8 @@ export const useTeamStore = defineStore('team', {
       // this fait référence au state
       this.team[index].actif = !this.team[index].actif
     },
+    deleteMember(index) {
+      this.team.splice(index, 1)
+    }
   },
 })
