@@ -7,7 +7,7 @@
 
 <template>
 
-  <h1>App</h1>
+  <h1>Mon App</h1>
 
   <nav>
     <RouterLink to="/">Home</RouterLink>
