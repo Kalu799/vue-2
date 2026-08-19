@@ -35,15 +35,21 @@ export const useTeamStore = defineStore('team', {
       ddn: "1975-04-03",
       actif: false
     },
-  ]
+  ],
   }),
   // méthodes getters
   getters: {
     // getter qui accède au state et qui renvois state.team
     allTeam: (state) => {return state.team},
+
     // getter qui accède au state et qui renvois uniquement les formateurs de team
     //allFormateurs: (state) => {return state.team}
   },
   // méthodes setters
-  actions: {}
+  actions: {
+    toggleActif(index) {
+      // this fait référence au state
+      this.team[index].actif = !this.team[index].actif
+    },
+  },
 })

@@ -22,7 +22,8 @@ import { useTeamStore } from '@/stores/teams'
   // fct qui change la valeur de 'actif' d'1 item de 'team' par son opposé (true -> false, false -> true)
   const toggleActive = (payload) => {
     //alert(payload.index)
-    team.value[payload.index].actif = !team.value[payload.index].actif
+    //team.value[payload.index].actif = !team.value[payload.index].actif
+    teamStore.toggleActif(payload.index)
   }
 
   const deleteMember = (payload) => {
