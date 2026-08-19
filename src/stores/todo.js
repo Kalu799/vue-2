@@ -17,7 +17,30 @@ export const useTodoStore = defineStore('todos', {
     async getApiTodos() {
       await fetch(urlApi)
       .then (res => res.json())
-      .then (res => {this.todos = res})
+      .then((res) => {
+        const tableau = Object.entries(res).map(([id, item]) => ({
+          id,
+          ...item,
+        }))
+        this.todos = tableau
+      })
+      .catch (err => {console.log(err)})
+    },
+    async toggleDone(id, statu) {
+      await fetch(`https://ingrwf13-default-rtdb.europe-west1.firebasedatabase.app/todos/${id}.json`,
+      {
+        method: "PATCH",
+        //headers: "Content-Type: application/json",
+        body: JSON.stringify({ done: statu}),
+      })
+      .then (res => res.json())
+      .then((res) => {
+        const tableau = Object.entries(res).map(([id, item]) => ({
+          id,
+          ...item,
+        }))
+        this.todos = tableau
+      })
       .catch (err => {console.log(err)})
     },
   },
