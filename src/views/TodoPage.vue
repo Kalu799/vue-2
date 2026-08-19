@@ -1,12 +1,23 @@
 <script setup>
 
+  import { useTodoStore } from '@/stores/todo';
+  import { onMounted, ref } from 'vue';
 
+  const todosStore = useTodoStore()
+
+  const todos = ref([])
+
+  onMounted(async () => {
+    await todosStore.getApiTodos()
+    todos.value = todosStore.allTodos
+  })
 
 </script>
 
 
 <template>
 
-  <h1>To Do</h1>
+  <h2>To Do Liste</h2>
+  {{ todos }}
 
 </template>
