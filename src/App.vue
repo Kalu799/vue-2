@@ -15,6 +15,8 @@
     <RouterLink to="/about">About</RouterLink>
     |
     <RouterLink to="/news">News</RouterLink>
+    |
+    <RouterLink to="/todo">ToDo</RouterLink>
   </nav>
 
   <div class="wrapper">
