@@ -9,6 +9,8 @@
 
   const { allTodos: todos } = storeToRefs(todosStore)
 
+  //const todos = ref([])
+
   const toggleAction = async (payload) => {
 
     await todosStore.toggleDone(payload.id, payload.statu)
