@@ -14,7 +14,7 @@
     |
     <RouterLink to="/about">About</RouterLink>
     |
-    <RouterLink to="/favorites">Favoris</RouterLink>
+    <RouterLink to="/news">News</RouterLink>
   </nav>
 
   <div class="wrapper">
