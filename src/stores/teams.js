@@ -53,6 +53,9 @@ export const useTeamStore = defineStore('team', {
     },
     deleteMember(index) {
       this.team.splice(index, 1)
-    }
+    },
+    addMember(payload) {
+      this.team.push(payload)
+    },
   },
 })

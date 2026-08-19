@@ -15,8 +15,9 @@ import { useTeamStore } from '@/stores/teams'
 
   const addMember = (payload) => {
     //console.log(newMember.value)
-    team.value.push(payload)
+    //team.value.push(payload)
     //newMember.value = initialNewMemberState()
+    teamStore.addMember(payload)
   }
 
   // fct qui change la valeur de 'actif' d'1 item de 'team' par son opposé (true -> false, false -> true)
