@@ -6,7 +6,7 @@
     pseudo: "",
     fonction: "",
     ddn: "",
-    actif: null
+    actif: false
   })
   
   const newMember = ref(initialNewMemberState())
@@ -14,7 +14,8 @@
   const emits = defineEmits(['dataForm'])
 
   const sendData = () => {
-    emits('dataForm', newMember.value)
+    emits('dataForm', { ...newMember.value })
+    //{ ...newMember.value } -> on n'envoie pas l'instance/l'objet newMember MAIS directement la valeur de newMember
     newMember.value = initialNewMemberState()
   }
 
