@@ -3,6 +3,7 @@ import HomePage from '@/views/HomePage.vue'
 import AboutPage from '@/views/AboutPage.vue'
 import NewsPage from '@/views/NewsPage.vue'
 import TodoPage from '@/views/TodoPage.vue'
+import TheNewsPage from '@/views/TheNewsPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       name: "Todo",
       path: "/todo",
       component: TodoPage
+    },
+    {
+      name: "OneNews",
+      path: "/news/:id",
+      componant : TheNewsPage
     },
   ],
 })
