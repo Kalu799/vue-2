@@ -17,6 +17,8 @@
   const newsStore = useNewsStore()
   // on crée myNews qui contiendra la news avec l'index qu'on cherche dans la route avec le getter oneNews(id) -> id = l'index de la news = id dans la route
   const myNews = ref(newsStore.oneNews(id))
+  //console.log(myNews)
+
   // fct d'ajout d'un commentaire sur la news
   const newComment = (payload) => {
     console.log(payload)
@@ -26,8 +28,6 @@
 
     newsStore.addComment(newPayload, index)
   }
-
-  //console.log(myNews)
 
 </script>
 
