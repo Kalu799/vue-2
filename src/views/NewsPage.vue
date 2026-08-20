@@ -11,7 +11,7 @@
   const news = ref(newsStore.allNews)
 
   const newComment = (payload) => {
-    console.log(payload)
+    //console.log(payload)
 
     const index = payload.index
     const newPayload = payload.payload

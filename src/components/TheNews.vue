@@ -27,7 +27,7 @@
     })
   }
 
-  console.log(props.comments)
+  //console.log(props.comments)
 
 </script>
 
