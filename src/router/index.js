@@ -43,9 +43,22 @@ const router = createRouter({
     {
       name: "Dashboard",
       path: "/dashboard",
-      component: DashboardPage
+      component: DashboardPage,
+      meta: { requiresAuth: true }
     },
   ],
+})
+
+router.beforeEach((to) => {
+  // 1. Vérifier si l'utilisateur est connecté
+  // (Ex: présence d'un token dans le localStorage ou état dans un store Pinia)
+  const isAuthenticated = localStorage.getItem('token') !== null
+
+  // 2. Vérifier si la page de destination (to) nécessite une connexion
+  if (to.meta.requiresAuth && !isAuthenticated) {
+    // Si oui et non connecté -> on redirige vers le login
+    return '/login'
+  }
 })
 
 export default router
