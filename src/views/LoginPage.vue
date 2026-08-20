@@ -29,17 +29,11 @@
   <p v-show="error" class="error">Erreur de login/password</p>
 
   <div class="login-wrapper">
-
     <form action="" class="login-form" @submit.prevent="connexion">
-
       <input type="text" name="login" placeholder="login" v-model.lazy.trim="login"><br>
-
       <input type="text" name="password" placeholder="password" v-model.lazy.trim="pass"><br>
-
       <button>Connection</button>
-
     </form>
-
   </div>
 
 </template>
