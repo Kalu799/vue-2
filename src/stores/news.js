@@ -6,36 +6,36 @@ export const useNewsStore = defineStore('news', {
   state: () => ({
     news: [
       {
-        titre: "News 1",
-        content: "contenu news 1",
+        titre: "News 0",
+        content: "contenu news 0",
         author: "Jean-Test",
         date: "2020-01-20",
         comments: [
           {
-            pseudo: "pseudo du com 1, news 1",
+            pseudo: "pseudo du com 0, news 0",
             content: "contenu du premier commentaire",
             date: "2020-01-22",
           },
           {
-            pseudo: "pseudo du com 2, news 1",
+            pseudo: "pseudo du com 1, news 0",
             content: "contenu du 2ième commentaire",
             date: "2020-01-22",
           }
         ]
       },
       {
-        titre: "News 2",
-        content: "contenu news 2",
+        titre: "News 1",
+        content: "contenu news 1",
         author: "Jean-Test",
         date: "2020-01-20",
         comments: [
           {
-            pseudo: "pseudo du com 1, news 2",
+            pseudo: "pseudo du com 0, news 1",
             content: "contenu du premier commentaire",
             date: "2020-01-22",
           },
           {
-            pseudo: "pseudo du com 2, news 2",
+            pseudo: "pseudo du com 1, news 1",
             content: "contenu du 2ième commentaire",
             date: "2020-01-22",
           }
@@ -51,7 +51,9 @@ export const useNewsStore = defineStore('news', {
     // getter qui accède au state et qui renvois uniquement les formateurs de team
     //allFormateurs: (state) => {return state.team}
 
-    allNews: (state) => {return state.news}
+    allNews: (state) => {return state.news},
+
+    oneNews: (state) => {return (index) => state.news[index]},
   },
   // méthodes setters
   actions: {
