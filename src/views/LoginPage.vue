@@ -4,7 +4,7 @@
 
   <div class="login-wrapper">
 
-    <form action="">
+    <form action="" class="login-form">
 
       <input type="text" name="login" placeholder="login"><br>
 
