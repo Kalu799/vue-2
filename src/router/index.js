@@ -31,7 +31,7 @@ const router = createRouter({
     {
       name: "OneNews",
       path: "/news/:id",
-      componant : TheNewsPage
+      component: TheNewsPage
     },
   ],
 })
