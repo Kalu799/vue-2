@@ -11,7 +11,7 @@
   const news = ref(newsStore.allNews)
   //console.log(news.value)
 
-  const props = defineProps(['index', 'item', 'comments'])
+  const props = defineProps(['index', 'item'])
 
   // on ne change JAMAIS les valeurs des propriétés, on les les mets dans une const ref() qu'on modif ensuite
   //const props = defineProps(['author', 'titre'])
@@ -25,6 +25,18 @@
       payload,
       index: props.index
     })
+  }
+
+  import { useRoute } from 'vue-router';
+  // on récup les données de la route avec la fct useRoute()
+  const route = useRoute()
+  //console.log(route)
+  // on récup l'id de la route
+  const id = Number(route.params.id)
+  //console.log(id)
+  const comments = ref(false)
+  if(!Number.isNaN(id)) {
+    comments.value = true
   }
 
   //console.log(props.comments)

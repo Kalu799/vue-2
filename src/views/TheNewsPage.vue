@@ -46,7 +46,7 @@
   <!-- si on récupère bien une news, on l'affiche -->
   <div class="news" v-if="myNews">
     <!-- on charge le composant News en lui donnant les data de myNews et l'id en index -->
-    <News :item="myNews" :index="id" :comments="comments" @dataForm="newComment"></News>
+    <News :item="myNews" :index="id" @dataForm="newComment"></News>
   </div>
 
   <!-- si on ne récupère pas de news, on affiche ça : -->

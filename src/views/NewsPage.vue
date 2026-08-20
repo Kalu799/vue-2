@@ -52,7 +52,7 @@
       <li class="news-item" v-for="(item,key) in news" :index="key">
         <!-- permet de récup 'item' et 'index' dans le composant -->
         <!-- écoute 'toggle' qui est envoyé du composant pour lancer 'toggleActive' -->
-        <News :item="item" :index="key" :comments="comments" @dataForm="newComment"></News>
+        <News :item="item" :index="key" @dataForm="newComment"></News>
       </li>
     </ul>
   </div>
