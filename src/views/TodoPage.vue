@@ -20,7 +20,7 @@
 
   onMounted(async () => {
     await todosStore.getApiTodos()
-    todos.value = todosStore.allTodos
+    //todos.value = todosStore.allTodos
   })
 
 </script>
