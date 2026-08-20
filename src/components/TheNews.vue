@@ -34,14 +34,17 @@
 
 <template>
 
+  <!-- ma news -->
   <div class="news">
     <h2>{{ item.titre }}</h2>
     <p>{{ item.content }}</p>
     <p class="author">{{ item.author }}, {{ item.date }}</p>
-
+    <!-- lien qui n'apparaitra que sur /news -->
     <RouterLink :to="`/news/${index}`" v-if="comments === false">Plus d'infos</RouterLink>
 
   </div>
+
+  <!-- commentaires de ma news qui se chargeront si on est sur la bonne route /news/:id -->
   <div v-if="comments === true">
     <h3>Comments</h3>
     <ul>
