@@ -4,6 +4,8 @@ import AboutPage from '@/views/AboutPage.vue'
 import NewsPage from '@/views/NewsPage.vue'
 import TodoPage from '@/views/TodoPage.vue'
 import TheNewsPage from '@/views/TheNewsPage.vue'
+import LoginPage from '@/views/LoginPage.vue'
+import DashboardPage from '@/views/DashboardPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +34,16 @@ const router = createRouter({
       name: "OneNews",
       path: "/news/:id",
       component: TheNewsPage
+    },
+    {
+      name: "Login",
+      path: "/login",
+      component: LoginPage
+    },
+    {
+      name: "Dashboard",
+      path: "/dashboard",
+      component: DashboardPage
     },
   ],
 })

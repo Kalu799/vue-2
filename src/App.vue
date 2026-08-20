@@ -17,6 +17,10 @@
     <RouterLink to="/news">News</RouterLink>
     |
     <RouterLink to="/todo">ToDo</RouterLink>
+    |
+    <RouterLink to="/login">Login</RouterLink>
+    |
+    <RouterLink to="/dashboard">Dashboard</RouterLink>
   </nav>
 
   <div class="wrapper">
