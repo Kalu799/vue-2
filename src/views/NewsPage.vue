@@ -19,6 +19,21 @@
     newsStore.addComment(newPayload, index)
   }
 
+  import { useRoute } from 'vue-router';
+
+  // on récup les données de la route avec la fct useRoute()
+  const route = useRoute()
+
+  // on récup l'id de la route
+  const id = Number(route.params.id)
+
+  //console.log(id)
+
+  const comments = ref(false)
+  if(!Number.isNaN(id)) {
+    comments.value = true
+  }
+
 </script>
 
 
@@ -37,7 +52,7 @@
       <li class="news-item" v-for="(item,key) in news" :index="key">
         <!-- permet de récup 'item' et 'index' dans le composant -->
         <!-- écoute 'toggle' qui est envoyé du composant pour lancer 'toggleActive' -->
-        <News :item="item" :index="key" @dataForm="newComment"></News>
+        <News :item="item" :index="key" :comments="comments" @dataForm="newComment"></News>
       </li>
     </ul>
   </div>

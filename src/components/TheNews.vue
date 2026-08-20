@@ -11,7 +11,7 @@
   const news = ref(newsStore.allNews)
   //console.log(news.value)
 
-  const props = defineProps(['index', 'item'])
+  const props = defineProps(['index', 'item', 'comments'])
 
   // on ne change JAMAIS les valeurs des propriétés, on les les mets dans une const ref() qu'on modif ensuite
   //const props = defineProps(['author', 'titre'])
@@ -27,6 +27,8 @@
     })
   }
 
+  console.log(props.comments)
+
 </script>
 
 
@@ -36,8 +38,11 @@
     <h2>{{ item.titre }}</h2>
     <p>{{ item.content }}</p>
     <p class="author">{{ item.author }}, {{ item.date }}</p>
+
+    <RouterLink :to="`/news/${index}`" v-if="comments === false">Plus d'infos</RouterLink>
+
   </div>
-  <div>
+  <div v-if="comments === true">
     <h3>Comments</h3>
     <ul>
       <li v-for="(item, key) in item.comments" :index="key">
