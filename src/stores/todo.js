@@ -10,10 +10,12 @@ export const useTodoStore = defineStore('todos', {
   }),
   // méthodes getters
   getters: {
+    // getter qui accède au state et qui renvois toutes les todos
     allTodos: (state) => {return state.todos}
   },
   // méthodes setters
   actions: {
+    // action qui fetch l'api pour récup les données
     async getApiTodos() {
       await fetch(urlApi)
       .then (res => res.json())
@@ -26,6 +28,7 @@ export const useTodoStore = defineStore('todos', {
       })
       .catch (err => {console.log(err)})
     },
+    // action qui changera la valeur de 'done' avec l'api
     async toggleDone(id, statu) {
       await fetch(`https://ingrwf13-default-rtdb.europe-west1.firebasedatabase.app/todos/${id}.json`,
       {

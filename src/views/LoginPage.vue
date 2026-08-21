@@ -10,6 +10,7 @@
 
   const error = ref(false)
 
+  // on connecte l'utilisateur et on lui donne un token qui la connexion est réussie
   const connexion = () => {
     if(login.value === 'admin' && pass.value === 'pass') {
       localStorage.token = 'montokendetest'

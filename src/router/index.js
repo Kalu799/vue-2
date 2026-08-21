@@ -44,6 +44,7 @@ const router = createRouter({
       name: "Dashboard",
       path: "/dashboard",
       component: DashboardPage,
+      // meta qui rendra la page sécu
       meta: { requiresAuth: true }
     },
   ],

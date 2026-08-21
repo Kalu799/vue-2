@@ -51,8 +51,10 @@ export const useNewsStore = defineStore('news', {
     // getter qui accède au state et qui renvois uniquement les formateurs de team
     //allFormateurs: (state) => {return state.team}
 
+    // getter qui accède au state et qui renvois toutes les news
     allNews: (state) => {return state.news},
 
+    // getter qui accède au state et qui renvois une seule news en fonction de l'index qu'on lui donne
     oneNews: (state) => {return (index) => state.news[index]},
   },
   // méthodes setters
